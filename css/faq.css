@@ -1,0 +1,13 @@
+/* =========================================================
+   ORIGEN · Sección "FAQ"
+   ========================================================= */
+.faq { max-width: 800px; margin: 56px auto 0; }
+.faq details { border-bottom: 1px solid var(--linea); }
+.faq summary { display: flex; align-items: center; justify-content: space-between; gap: 20px; cursor: pointer; list-style: none; padding: 24px 0; font-family: var(--font-head); font-size: 20px; font-weight: 600; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary .pm { width: 24px; height: 24px; flex: none; position: relative; transition: transform .2s; }
+.faq summary .pm::before, .faq summary .pm::after { content: ""; position: absolute; background: var(--bosque); border-radius: 2px; }
+.faq summary .pm::before { top: 11px; left: 3px; width: 18px; height: 2px; }
+.faq summary .pm::after { left: 11px; top: 3px; width: 2px; height: 18px; transition: opacity .2s; }
+.faq details[open] summary .pm::after { opacity: 0; }
+.faq details p { padding: 0 44px 24px 0; color: var(--piedra); font-size: 16px; line-height: 1.6; }

@@ -1,0 +1,36 @@
+/* =========================================================
+   ORIGEN · Layout compartido
+   container, sección, encabezados, variantes de fondo, reveal
+   ========================================================= */
+
+.container { max-width: 1180px; margin: 0 auto; padding: 0 32px; }
+@media (max-width: 640px){ .container { padding: 0 20px; } }
+
+.section { padding: 112px 0; }
+@media (max-width: 720px){ .section { padding: 72px 0; } }
+
+/* ---------- Encabezados de sección ---------- */
+.eyebrow { font-family: var(--font-mono); font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: var(--terracota); display: inline-flex; align-items: center; gap: 10px; }
+.eyebrow::before { content: ""; width: 22px; height: 1px; background: currentColor; }
+.eyebrow.on-dark { color: var(--lima); }
+.eyebrow--center { justify-content: center; }
+
+.s-title { font-family: var(--font-head); font-weight: 600; font-size: var(--t-h1); line-height: var(--lh-h1); letter-spacing: var(--tr-h1); margin: 18px 0 0; max-width: 18ch; }
+.s-title.center { margin-left: auto; margin-right: auto; text-align: center; }
+.s-intro { font-size: var(--t-bodyL); line-height: 1.6; color: var(--piedra); max-width: 56ch; margin-top: 18px; }
+.s-intro.center { margin-left: auto; margin-right: auto; text-align: center; }
+.head-center { text-align: center; display: flex; flex-direction: column; align-items: center; }
+
+/* ---------- Variantes de fondo de sección ---------- */
+.dark { background: var(--bosque-tinta); color: var(--crema); }
+.dark .s-title, .dark h2, .dark h3 { color: var(--crema); }
+.dark .s-intro { color: rgba(246,241,231,.72); }
+.green { background: var(--bosque); color: var(--crema); }
+.green .s-intro { color: rgba(246,241,231,.8); }
+.arena-bg { background: var(--arena); }
+.hueso-bg { background: var(--hueso); }
+
+/* ---------- Reveal al hacer scroll ---------- */
+.fade { opacity: 0; transform: translateY(20px); transition: opacity .7s ease, transform .7s ease; }
+.fade.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce){ .fade { opacity: 1; transform: none; } }

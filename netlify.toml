@@ -1,0 +1,4 @@
+# Despliegue en Netlify — sitio estático, sin build.
+[build]
+  publish = "."
+  command = ""

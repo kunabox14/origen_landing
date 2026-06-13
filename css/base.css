@@ -1,0 +1,130 @@
+/* =========================================================
+   ORIGEN · Design Tokens + Reset + Tipografía base
+   Natural · Premium · Inteligente
+   ========================================================= */
+
+:root {
+  /* ---- Marca / Verde ---- */
+  --bosque:        #27402B;  /* base primaria — botones, marca */
+  --bosque-hondo:  #1B2E1E;  /* hover / fondos profundos */
+  --bosque-tinta:  #14241A;  /* el verde más oscuro, casi tinta */
+  --musgo:         #3C5A40;  /* superficie verde secundaria */
+  --salvia:        #6E8A6A;  /* verde apagado, bordes sobre verde */
+
+  /* ---- Naturales ---- */
+  --crema:         #F6F1E7;  /* fondo de app / lienzo */
+  --hueso:         #FCF9F2;  /* tarjetas, superficies elevadas */
+  --arena:         #ECE3D4;  /* superficie secundaria */
+  --arena-hondo:   #E3D8C5;  /* relleno sutil, tracks */
+  --linea:         #E0D6C4;  /* borde hairline */
+  --linea-fuerte:  #D2C6B0;  /* divisor con más presencia */
+  --negro-suave:   #1A1A17;  /* texto primario */
+  --piedra:        #6E6B5E;  /* texto secundario */
+  --niebla:        #9C998B;  /* texto terciario / placeholder */
+
+  /* ---- Acentos (expresivos) ---- */
+  --lima:          #BBE85B;  /* verde lima fresco — energía, foco */
+  --lima-hondo:    #9BCB3E;  /* borde / hover del lima */
+  --lima-suave:    #EDF6D4;  /* tinte lima */
+  --terracota:     #C75B39;  /* acento cálido — humano, tierra */
+  --terracota-hondo:#A8462A;
+  --terracota-suave:#F4E2D8;  /* tinte terracota */
+
+  /* ---- Estados ---- */
+  --bien:          #2F7D4E;  --bien-superficie:#E7F0E5;  --bien-linea:#C2DBBE;
+  --alerta:        #C05530;  --alerta-superficie:#F6E4DA; --alerta-linea:#E7C9B9;
+  --neutro:        #6E6B5E;  --neutro-superficie:#ECE3D4; --neutro-linea:#DDD2BE;
+  --info:          #4E7C7A;  --info-superficie:#E4EEEC;  --info-linea:#C5DAD7;
+
+  /* ---- Rewards niveles ---- */
+  --nivel-semilla: #B79A6A;  /* tierra */
+  --nivel-luz:     #C9A227;  /* dorado cálido */
+  --nivel-agua:    #5FA6A0;  /* agua / teal */
+  --nivel-bosque:  #2F7D4E;  /* verde */
+
+  /* ---- Tipografía ---- */
+  --font-head: 'Spectral', Georgia, 'Times New Roman', serif;  /* conmutable A/B */
+  --font-body: 'Hanken Grotesk', system-ui, -apple-system, sans-serif;
+  --font-mono: 'Spline Sans Mono', ui-monospace, 'SF Mono', monospace;
+
+  /* Escala tipográfica — desktop */
+  --t-display: 72px;  --lh-display: 1.0;   --tr-display: -0.02em;
+  --t-h1:      54px;  --lh-h1: 1.04;       --tr-h1: -0.02em;
+  --t-h2:      40px;  --lh-h2: 1.1;        --tr-h2: -0.015em;
+  --t-h3:      28px;  --lh-h3: 1.2;        --tr-h3: -0.01em;
+  --t-h4:      21px;  --lh-h4: 1.32;       --tr-h4: -0.005em;
+  --t-bodyL:   19px;  --lh-bodyL: 1.6;
+  --t-body:    17px;  --lh-body: 1.6;
+  --t-small:   15px;  --lh-small: 1.5;
+  --t-micro:   13px;  --lh-micro: 1.3;
+  --tr-micro:  0.14em;
+
+  /* ---- Spacing (base 4) ---- */
+  --s1: 4px;  --s2: 8px;  --s3: 12px; --s4: 16px; --s5: 20px;
+  --s6: 24px; --s7: 32px; --s8: 40px; --s9: 48px; --s10: 64px;
+  --s11: 80px; --s12: 96px; --s13: 128px;
+
+  /* ---- Radios ---- */
+  --r-xs: 4px; --r-sm: 6px; --r-md: 8px; --r-lg: 10px; --r-xl: 14px; --r-pill: 999px;
+
+  /* ---- Bordes ---- */
+  --bw: 1px; --bw-fuerte: 1.5px;
+
+  /* ---- Sombras (naturales, suaves) ---- */
+  --e1: 0 1px 2px rgba(20,36,26,0.05);
+  --e2: 0 2px 6px rgba(20,36,26,0.06), 0 1px 2px rgba(20,36,26,0.04);
+  --e3: 0 10px 30px -10px rgba(20,36,26,0.16), 0 2px 6px rgba(20,36,26,0.05);
+  --e-foco: 0 0 0 3px rgba(155,203,62,0.45);
+
+  /* ---- Layout ---- */
+  --maxw: 1180px;
+}
+
+/* =========================================================
+   Reset + Base
+   ========================================================= */
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  font-family: var(--font-body);
+  font-size: var(--t-body);
+  line-height: var(--lh-body);
+  color: var(--negro-suave);
+  background: var(--crema);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "ss01" 1;
+}
+img { max-width: 100%; display: block; }
+button { font: inherit; color: inherit; cursor: pointer; }
+a { color: inherit; }
+::selection { background: var(--lima); color: var(--bosque-tinta); }
+
+/* Sprite SVG de iconos: oculto, sólo aporta los <symbol> referenciados con <use>. */
+.svg-sprite { position: absolute; width: 0; height: 0; }
+
+/* =========================================================
+   Clases tipográficas
+   ========================================================= */
+.t-display { font-family: var(--font-head); font-size: var(--t-display); line-height: var(--lh-display); letter-spacing: var(--tr-display); font-weight: 600; }
+.t-h1 { font-family: var(--font-head); font-size: var(--t-h1); line-height: var(--lh-h1); letter-spacing: var(--tr-h1); font-weight: 600; }
+.t-h2 { font-family: var(--font-head); font-size: var(--t-h2); line-height: var(--lh-h2); letter-spacing: var(--tr-h2); font-weight: 600; }
+.t-h3 { font-family: var(--font-head); font-size: var(--t-h3); line-height: var(--lh-h3); letter-spacing: var(--tr-h3); font-weight: 600; }
+.t-h4 { font-family: var(--font-head); font-size: var(--t-h4); line-height: var(--lh-h4); letter-spacing: var(--tr-h4); font-weight: 600; }
+.t-bodyL { font-size: var(--t-bodyL); line-height: var(--lh-bodyL); }
+.t-body  { font-size: var(--t-body);  line-height: var(--lh-body); }
+.t-small { font-size: var(--t-small); line-height: var(--lh-small); }
+.t-micro {
+  font-family: var(--font-mono); font-size: var(--t-micro); line-height: var(--lh-micro);
+  letter-spacing: var(--tr-micro); text-transform: uppercase; font-weight: 500; color: var(--piedra);
+}
+
+/* Escala tipográfica — mobile */
+@media (max-width: 640px) {
+  :root {
+    --t-display: 40px; --lh-display: 1.05;
+    --t-h1: 32px; --t-h2: 26px; --t-h3: 22px; --t-h4: 19px;
+    --t-bodyL: 18px; --t-body: 16px; --t-small: 14px; --t-micro: 12px;
+  }
+}

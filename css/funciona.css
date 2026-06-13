@@ -1,0 +1,9 @@
+/* =========================================================
+   ORIGEN · Sección "Cómo funciona" (pasos)
+   ========================================================= */
+.pasos { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-top: 56px; }
+@media (max-width: 820px){ .pasos { grid-template-columns: 1fr; } }
+.paso { position: relative; padding-top: 18px; }
+.paso .n { font-family: var(--font-mono); font-size: 13px; font-weight: 600; color: var(--terracota); border-top: 2px solid var(--terracota); padding-top: 16px; display: inline-block; }
+.paso h3 { font-family: var(--font-head); font-size: 24px; font-weight: 600; margin: 14px 0 8px; letter-spacing: -.01em; }
+.paso p { color: var(--piedra); font-size: 16px; line-height: 1.55; }

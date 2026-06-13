@@ -1,0 +1,11 @@
+/* =========================================================
+   ORIGEN · Showcase "Lo que cambia con Origen"
+   ========================================================= */
+.showcase { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+@media (max-width: 920px){ .showcase { grid-template-columns: 1fr; gap: 48px; } }
+.feat-list { display: flex; flex-direction: column; gap: 22px; margin-top: 32px; }
+.feat-list li { display: flex; gap: 16px; list-style: none; }
+.feat-list .ck { width: 30px; height: 30px; border-radius: 50%; background: var(--bien-superficie); color: var(--bien); display: grid; place-items: center; flex: none; }
+.feat-list .ck .ico { width: 17px; height: 17px; stroke-width: 2.2; }
+.feat-list h4 { font-size: 17px; font-weight: 700; margin-bottom: 3px; }
+.feat-list p { font-size: 15px; color: var(--piedra); line-height: 1.5; }

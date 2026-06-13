@@ -1,0 +1,12 @@
+/* =========================================================
+   ORIGEN · Sección "Rewards · Yapas · Referidos"
+   ========================================================= */
+.rewards-block { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+@media (max-width: 880px){ .rewards-block { grid-template-columns: 1fr; gap: 40px; } }
+.rewards-block .cta-row { margin-top: 32px; }
+.reward-cards { display: flex; flex-direction: column; gap: 16px; }
+.reward-pill { display: flex; align-items: center; gap: 18px; background: rgba(246,241,231,.06); border: 1px solid rgba(246,241,231,.16); border-radius: var(--r-lg); padding: 20px 22px; }
+.reward-pill .ic { width: 46px; height: 46px; border-radius: var(--r-md); background: rgba(187,232,91,.16); color: var(--lima); display: grid; place-items: center; flex: none; }
+.reward-pill h4 { font-family: var(--font-head); font-size: 19px; font-weight: 600; color: var(--crema); }
+.reward-pill p { font-size: 14px; color: rgba(246,241,231,.72); margin-top: 3px; }
+.reward-pill .big { margin-left: auto; font-family: var(--font-mono); font-weight: 600; font-size: 22px; color: var(--lima); }

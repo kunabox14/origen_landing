@@ -1,0 +1,17 @@
+/* =========================================================
+   ORIGEN · Intro cinematográfica 3D (overlay)
+   Estilos del overlay + estados de armado de la 1ª visita.
+   ========================================================= */
+#origen-intro{position:fixed;inset:0;z-index:9999;background:#0a130d;overflow:hidden}
+#origen-intro canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+#origen-intro .glow-core{position:absolute;left:50%;top:50%;width:72vmin;height:72vmin;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(94,188,102,.20),rgba(10,19,13,0) 62%);opacity:0;pointer-events:none;z-index:1}
+#origen-intro .intro-word{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) scale(.965);width:min(62vw,560px);height:auto;opacity:0;will-change:opacity,transform,filter;z-index:3}
+#origen-intro .intro-mark{position:absolute;left:50%;top:50%;width:24vmin;height:auto;transform:translate(-50%,-50%);opacity:0;will-change:left,top,width,opacity,transform,filter;z-index:4}
+#origen-intro .flash{position:absolute;left:50%;top:50%;width:62vmax;height:62vmax;border-radius:50%;transform:translate(-50%,-50%) scale(0);background:radial-gradient(circle,rgba(225,255,190,.95) 0%,rgba(187,232,91,.45) 30%,rgba(94,188,102,0) 70%);opacity:0;mix-blend-mode:screen;pointer-events:none;z-index:5}
+#origen-intro .vignette{position:absolute;inset:0;z-index:2;pointer-events:none;background:radial-gradient(120% 120% at 50% 50%,rgba(10,19,13,0) 50%,rgba(4,9,6,.85) 100%)}
+html:not(.intro-armed) #origen-intro{display:none}
+.intro-armed body{overflow:hidden}
+.intro-armed #site-root{opacity:0}
+#site-root.intro-reveal{animation:origenReveal .9s cubic-bezier(.16,.84,.3,1) forwards}
+@keyframes origenReveal{0%{opacity:0;transform:scale(1.045);filter:blur(7px)}55%{filter:blur(1.5px)}100%{opacity:1;transform:none;filter:none}}
+@media (prefers-reduced-motion:reduce){#origen-intro{display:none!important}.intro-armed #site-root{opacity:1}.intro-armed body{overflow:auto}}

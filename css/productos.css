@@ -1,0 +1,10 @@
+/* =========================================================
+   ORIGEN · Sección "Productos destacados"
+   (la tarjeta .producto vive en components.css)
+   ========================================================= */
+.prod-grid-4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; margin-top: 48px; }
+@media (max-width: 920px){ .prod-grid-4 { grid-template-columns: repeat(2,1fr); } }
+@media (max-width: 520px){ .prod-grid-4 { grid-template-columns: 1fr 1fr; gap: 12px; } }
+
+/* CTA "Ver catálogo completo" */
+.prod-cta { text-align: center; margin-top: 40px; }

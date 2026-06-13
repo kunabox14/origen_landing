@@ -1,0 +1,8 @@
+/* =========================================================
+   ORIGEN · Sección "Filosofía"
+   ========================================================= */
+.filo { text-align: center; }
+.filo .quote { font-family: var(--font-head); font-weight: 500; font-size: clamp(30px, 4.6vw, 56px); line-height: 1.18; letter-spacing: -.02em; max-width: 20ch; margin: 28px auto 0; }
+.filo .quote em { font-style: italic; color: var(--lima); }
+.filo .s-intro { margin-top: 28px; max-width: 54ch; }
+.filo .sign { font-family: var(--font-mono); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--salvia); margin-top: 36px; }

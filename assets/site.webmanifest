@@ -1,0 +1,15 @@
+{
+  "name": "Origen · Comer mejor, sin complicaciones",
+  "short_name": "Origen",
+  "description": "La primera suscripción de orgánicos con trazabilidad de Bolivia.",
+  "start_url": "../index.html",
+  "display": "standalone",
+  "background_color": "#0a130d",
+  "theme_color": "#0a130d",
+  "icons": [
+    { "src": "favicon-16.png", "sizes": "16x16", "type": "image/png" },
+    { "src": "favicon-32.png", "sizes": "32x32", "type": "image/png" },
+    { "src": "apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "favicon.svg", "type": "image/svg+xml", "sizes": "any" }
+  ]
+}

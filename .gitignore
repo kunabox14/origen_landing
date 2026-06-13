@@ -1,0 +1,10 @@
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.log
+
+# Herramientas de desarrollo local (no necesarias en producción)
+.claude/
+
+# Artefacto original empaquetado (respaldo local de 5 MB; no se publica)
+ORIGEN Landing 6.0.html

@@ -1,0 +1,13 @@
+/* =========================================================
+   ORIGEN · Header / Nav
+   ========================================================= */
+.lnav { position: sticky; top: 0; z-index: 60; background: rgba(246,241,231,.82); backdrop-filter: blur(12px); border-bottom: 1px solid var(--linea); }
+.lnav .row { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+.lnav .brand { display: inline-flex; align-items: center; }
+.lnav img { height: 30px; width: auto; }
+.lnav .links { display: flex; gap: 30px; }
+.lnav .links a { text-decoration: none; font-size: 15px; font-weight: 500; color: var(--piedra); transition: color .15s; }
+.lnav .links a:hover { color: var(--bosque); }
+.lnav .right { display: flex; align-items: center; gap: 16px; }
+.lnav .login { font-size: 15px; font-weight: 600; text-decoration: none; color: var(--bosque); }
+@media (max-width: 860px){ .lnav .links { display: none; } .lnav .login { display: none; } }

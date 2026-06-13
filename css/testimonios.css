@@ -1,0 +1,13 @@
+/* =========================================================
+   ORIGEN · Sección "Testimonios"
+   ========================================================= */
+.testi-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-top: 56px; }
+@media (max-width: 880px){ .testi-grid { grid-template-columns: 1fr; } }
+.testi { background: var(--hueso); border: 1px solid var(--linea); border-radius: var(--r-xl); padding: 28px; display: flex; flex-direction: column; }
+.testi .stars { display: flex; gap: 3px; color: var(--lima-hondo); margin-bottom: 16px; }
+.testi .stars .ico { width: 17px; height: 17px; fill: var(--lima-hondo); stroke: var(--lima-hondo); }
+.testi p { font-size: 17px; line-height: 1.55; color: var(--negro-suave); flex: 1; }
+.testi .who { display: flex; align-items: center; gap: 12px; margin-top: 22px; }
+.testi .av { width: 42px; height: 42px; border-radius: 50%; background: var(--arena); display: grid; place-items: center; font-family: var(--font-head); font-weight: 600; color: var(--bosque); }
+.testi .who .nm { font-weight: 600; font-size: 15px; }
+.testi .who .role { font-size: 13px; color: var(--niebla); }

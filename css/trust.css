@@ -1,0 +1,8 @@
+/* =========================================================
+   ORIGEN · Trust strip (marcas que ya están en Origen)
+   ========================================================= */
+.trust { border-top: 1px solid var(--linea); border-bottom: 1px solid var(--linea); padding: 26px 0; }
+.trust .row { display: flex; align-items: center; justify-content: space-between; gap: 28px; flex-wrap: wrap; }
+.trust .lab { font-family: var(--font-mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--niebla); }
+.trust .marks { display: flex; gap: 36px; flex-wrap: wrap; align-items: center; }
+.trust .marks span { font-family: var(--font-head); font-weight: 600; font-size: 18px; color: var(--piedra); opacity: .7; }

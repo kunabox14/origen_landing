@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Origen · Comer mejor, sin complicaciones</title>
+<meta name="description" content="Origen · La primera suscripción de orgánicos con trazabilidad de Bolivia. Comer mejor, sin complicaciones.">
+
+<!-- Favicons -->
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="manifest" href="assets/site.webmanifest">
+<meta name="theme-color" content="#0a130d">
+
+<!-- Estilos: base primero, luego el resto en orden del DOM -->
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/intro.css">
+<link rel="stylesheet" href="css/header.css">
+<link rel="stylesheet" href="css/hero.css">
+<link rel="stylesheet" href="css/trust.css">
+<link rel="stylesheet" href="css/problema.css">
+<link rel="stylesheet" href="css/showcase.css">
+<link rel="stylesheet" href="css/funciona.css">
+<link rel="stylesheet" href="css/features.css">
+<link rel="stylesheet" href="css/productos.css">
+<link rel="stylesheet" href="css/rewards.css">
+<link rel="stylesheet" href="css/filosofia.css">
+<link rel="stylesheet" href="css/testimonios.css">
+<link rel="stylesheet" href="css/planes.css">
+<link rel="stylesheet" href="css/faq.css">
+<link rel="stylesheet" href="css/cta.css">
+<link rel="stylesheet" href="css/footer.css">
+
+<!-- Armado de la intro: síncrono en <head> para evitar parpadeo antes del 1er pintado -->
+<script src="js/intro-arm.js"></script>
+</head>
+<body>
+
+<!-- ===== Intro cinematográfica ORIGEN (overlay 3D) ===== -->
+<div id="origen-intro" aria-hidden="true">
+  <canvas id="origen-particles"></canvas>
+  <div class="glow-core"></div>
+  <img class="intro-word" src="img/logo-origen-light.svg" alt="Origen">
+  <img class="intro-mark" src="img/origen-mark.svg" alt="">
+  <div class="flash"></div>
+  <div class="vignette"></div>
+</div>
+
+<!-- Envoltorio del sitio (permite la transición de revelado en profundidad) -->
+<div id="site-root">
+
+<!-- ===== Icon sprite ===== -->
+<svg class="svg-sprite" aria-hidden="true"><defs>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.2-3.2"></path></symbol>
+  <symbol id="i-scan" viewBox="0 0 24 24"><path d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3"></path><path d="M4 12h16"></path></symbol>
+  <symbol id="i-cart" viewBox="0 0 24 24"><circle cx="9" cy="20" r="1.4"></circle><circle cx="18" cy="20" r="1.4"></circle><path d="M2.5 3h2l2.2 11.2a1.6 1.6 0 0 0 1.6 1.3h8.4a1.6 1.6 0 0 0 1.6-1.3L21 7H6"></path></symbol>
+  <symbol id="i-bell" viewBox="0 0 24 24"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 8-3 8h18s-3-1-3-8"></path><path d="M13.7 21a2 2 0 0 1-3.4 0"></path></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 4 13c0-5 4-9 16-9 0 10-5 16-11 16Z"></path><path d="M4 20c2-3 5-5 9-6"></path></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 5 5L19 7"></path></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"></path></symbol>
+  <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"></path></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.2-9A4.5 4.5 0 0 1 12 6a4.5 4.5 0 0 1 9.2 5c-2.2 4.6-9.2 9-9.2 9Z"></path></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.4 5.9.8-4.3 4.1 1 5.9-5.2-2.8-5.2 2.8 1-5.9L3.2 9.7l5.9-.8z"></path></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="2.6"></circle></symbol>
+  <symbol id="i-gift" viewBox="0 0 24 24"><path d="M4 11h16v9H4z"></path><path d="M2.5 7.5h19V11h-19zM12 7.5V20"></path><path d="M12 7.5S10.5 3.5 8 4.5 9.5 7.5 12 7.5Zm0 0s1.5-4 4-3-.5 3-4 3Z"></path></symbol>
+  <symbol id="i-truck" viewBox="0 0 24 24"><path d="M3 6h11v9H3zM14 9h4l3 3v3h-7z"></path><circle cx="7" cy="18" r="1.6"></circle><circle cx="17" cy="18" r="1.6"></circle></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"></circle><path d="M4 20c0-4 3.6-6 8-6s8 2 8 6"></path></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M4 11 12 4l8 7M6 10v10h12V10"></path></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"></circle><path d="M12 7.5V12l3 2"></path></symbol>
+  <symbol id="i-repeat" viewBox="0 0 24 24"><path d="M17 2l4 4-4 4"></path><path d="M3 11V9a4 4 0 0 1 4-4h14"></path><path d="M7 22l-4-4 4-4"></path><path d="M21 13v2a4 4 0 0 1-4 4H3"></path></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3v6M12 15v6M3 12h6M15 12h6"></path><path d="M6.5 6.5l3 3M14.5 14.5l3 3M17.5 6.5l-3 3M9.5 14.5l-3 3"></path></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"></path><path d="m9 12 2 2 4-4"></path></symbol>
+</defs></svg>
+
+<!-- ===== Nav ===== -->
+<header class="lnav">
+  <div class="container row">
+    <a href="#" aria-label="Origen — inicio" class="brand"><img src="img/logo-origen-dark.svg" alt="Origen"></a>
+    <nav class="links">
+      <a href="#problema">El problema</a>
+      <a href="#funciona">Cómo funciona</a>
+      <a href="#productos">Productos</a>
+      <a href="#planes">Planes</a>
+      <a href="#faq">Preguntas</a>
+    </nav>
+    <div class="right">
+      <a class="login" data-toast="Próximamente disponible para iOS y Android" role="button" tabindex="0">Descarga la App</a>
+      <a href="#planes" class="btn btn--primary btn--sm">Empezar</a>
+    </div>
+  </div>
+</header>
+
+<!-- ===== Hero ===== -->
+<section class="hero-l">
+  <div class="container grid">
+    <div>
+      <span class="eyebrow">Somos la primera suscripción de orgánicos con trazabilidad de Bolivia</span>
+      <h1>Comer mejor debería ser <em>fácil.</em></h1>
+      <p class="sub">Origen te lleva productos orgánicos confiables a tu puerta y a la puerta de los que amas de forma recurrente. Elige una vez y disfruta de una despenza lista siempre. Cancela cuando quieras.</p>
+      <div class="cta">
+        <a href="https://wa.me/59170516511?text=Quiero%20pagar%20mi%20suscripcion%20de%2099%20Bs.%20por%20adelantado%20para%20tener%20un%2050%25%20de%20descuento%20en%20mi%20primera%20compra%20cuando%20la%20app%20de%20Origen%20este%20lista." target="_blank" rel="noopener" class="btn btn--primary btn--lg">Armar mi primera caja</a>
+        <a href="#funciona" class="btn btn--secondary btn--lg">Ver cómo funciona</a>
+      </div>
+      <div class="micro">
+        <span><svg class="ico"><use href="#i-check"></use></svg> Cancela cuando quieras</span>
+        <span><svg class="ico"><use href="#i-check"></use></svg> Entregas en La Paz</span>
+        <span><svg class="ico"><use href="#i-check"></use></svg> Productos Saludables </span>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div class="hero-blob"></div>
+      <div class="device">
+        <div class="notch"></div>
+        <iframe class="appframe" data-screen="screenInicio" src="screens/inicio.html" title="App Origen — Inicio" scrolling="no"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Trust strip ===== -->
+<div class="trust">
+  <div class="container row">
+    <span class="lab">Productos que ya están en Origen</span>
+    <div class="marks">
+      <span>La Casa Marimiel</span><span>SaborEco Bio</span><span>Coco Show</span><span>Granja Andina</span><span>Quinua Real</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== El problema ===== -->
+<section class="section dark" id="problema">
+  <div class="container">
+    <div class="head-center">
+      <span class="eyebrow on-dark">El problema</span>
+      <h2 class="s-title center">Quieres comer mejor. El tiempo no te deja.</h2>
+      <p class="s-intro center">Te entendemos. Es más dificil elegir sano si los precios son poco claros, y hay muchos productos que parecen ser lo mismo, y tu compra saludable siempre queda para “la próxima ”.</p>
+    </div>
+    <div class="prob-grid">
+      <div class="prob-card">
+        <p class="q">“Voy al supermercado con buena intención y termino comprando lo de siempre.”</p>
+        <div class="who">— Consumo inconsciente</div>
+      </div>
+      <div class="prob-card">
+        <p class="q">“No sé qué tiene realmente lo que compro. Las etiquetas no ayudan.”</p>
+        <div class="who">— Falta de transparencia</div>
+      </div>
+      <div class="prob-card">
+        <p class="q">“Lo orgánico está disperso, caro y es un esfuerzo cada vez por eso lo dejo para después.”</p>
+        <div class="who">— Esfuerzo recurrente</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Lo que cambia con Origen ===== -->
+<section class="section">
+  <div class="container">
+    <div class="showcase">
+      <div>
+        <span class="eyebrow">Lo que cambia con Origen</span>
+        <h2 class="s-title">Decides una vez. Recibes una caja saludable cada mes.</h2>
+        <p class="s-intro">Origen convierte comer bien en algo automático. Armas tu caja, eliges cada cuánto la quieres, y nosotros nos encargamos del resto —con productos que sí puedes confiar.</p>
+        <ul class="feat-list">
+          <li><span class="ck"><svg class="ico"><use href="#i-check"></use></svg></span><div><h4>De decisión diaria a hábito</h4><p>Lo que antes requería voluntad cada semana, ahora ocurre solo.</p></div></li>
+          <li><span class="ck"><svg class="ico"><use href="#i-check"></use></svg></span><div><h4>De dudar a confiar</h4><p>Cada producto pasa por curación. Origen, productor y composición, claros.</p></div></li>
+          <li><span class="ck"><svg class="ico"><use href="#i-check"></use></svg></span><div><h4>De gastar de más a ahorrar</h4><p>La suscripción te da mejor precio que la compra suelta. Siempre.</p></div></li>
+        </ul>
+      </div>
+      <div class="hero-art">
+        <div class="hero-blob"></div>
+        <div class="device">
+          <div class="notch"></div>
+          <iframe class="appframe" data-screen="screenCarrito" src="screens/carrito.html" title="App Origen — Mi caja" scrolling="no"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Cómo funciona ===== -->
+<section class="section arena-bg" id="funciona">
+  <div class="container">
+    <div class="head-center">
+      <span class="eyebrow">Cómo funciona</span>
+      <h2 class="s-title center">Tres pasos. Una sola vez.</h2>
+    </div>
+    <div class="pasos">
+      <div class="paso">
+        <span class="n">01</span>
+        <h3>Arma tu caja</h3>
+        <p>Elige entre productos orgánicos curados. Frutas, despensa, snacks, superfoods. Lo que tú y los que amas van a comer.</p>
+      </div>
+      <div class="paso">
+        <span class="n">02</span>
+        <h3>Elige cada cuánto</h3>
+        <p>Semanal o quincenal, a la hora que te queda bien. Cancela o ajusta desde la app cuando quieras.</p>
+      </div>
+      <div class="paso">
+        <span class="n">03</span>
+        <h3>Recíbelo y repite</h3>
+        <p>Llega a tu puerta. Origen aprende tu ritmo y te recuerda reponer esenciales antes de que se te acaben.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Features clave ===== -->
+<section class="section" id="features">
+  <div class="container">
+    <div class="head-center">
+      <span class="eyebrow">Lo que hace Origen</span>
+      <h2 class="s-title center">Pensado para que comer bien sea automático</h2>
+    </div>
+    <div class="benef">
+      <div class="benef-card feat">
+        <div class="ic-w"><svg class="ico"><use href="#i-repeat"></use></svg></div>
+        <div class="body">
+          <h3>Suscripción inteligente</h3>
+          <p>El corazón de Origen. Define tu caja una vez y recíbela en automático con mejor precio. La app entiende tu ritmo de consumo y te avisa antes de que algo se termine —para que nunca te quedes sin lo esencial.</p>
+        </div>
+      </div>
+      <div class="benef-card">
+        <div class="ic-w"><svg class="ico"><use href="#i-shield"></use></svg></div>
+        <h3>Productos en los que sí puedes confiar</h3>
+        <p>Cada producto y productor pasa por curación. Ves el origen, la composición y por qué está en Origen. Transparencia, antes que marketing.</p>
+      </div>
+      <div class="benef-card">
+        <div class="ic-w"><svg class="ico"><use href="#i-scan"></use></svg></div>
+        <h3>Escáner <span class="badge badge--keto">Proximamente</span></h3>
+        <p>Apunta a cualquier producto y entiende su composición al instante: una lectura simple de qué entra en tu cuerpo, dentro y fuera de Origen.</p>
+      </div>
+      <div class="benef-card">
+        <div class="ic-w"><svg class="ico"><use href="#i-gift"></use></svg></div>
+        <h3>Rewards y Yapas</h3>
+        <p>Cada compra suma puntos y sube tu nivel. Desbloqueas Yapas: envíos gratis, sorpresas y beneficios que premian tu constancia.</p>
+      </div>
+      <div class="benef-card">
+        <div class="ic-w"><svg class="ico"><use href="#i-truck"></use></svg></div>
+        <h3>Entrega en tu ventana</h3>
+        <p>Eliges el día y el rango horario. Seguimiento claro y entrega puntual en la Zona Sur de La Paz.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Productos destacados ===== -->
+<section class="section hueso-bg" id="productos">
+  <div class="container">
+    <div class="head-center">
+      <span class="eyebrow">El catálogo</span>
+      <h2 class="s-title center">Orgánico y saludable directamente del Origen.</h2>
+      <p class="s-intro center">Una selección curada que crece cada semana. <br>Precios claros en bolivianos.</p>
+    </div>
+    <div class="prod-grid-4">
+      <div class="producto">
+        <div class="foto"><img src="img/prod-harina-almendras.jpg" alt="Harina de almendras La Casa Marimiel"><div class="badges"><span class="badge badge--organico">Orgánico</span></div><button class="fav"><svg class="ico"><use href="#i-heart"></use></svg></button></div>
+        <div class="cuerpo"><div class="prov">La Casa Marimiel</div><h4>Harina de almendras</h4><div class="precio"><span class="now">Bs. 39.60</span><span class="was">Bs. 45</span></div><div class="sub"><svg class="ico"><use href="#i-leaf"></use></svg> Suscríbete −12%</div></div>
+      </div>
+      <div class="producto">
+        <div class="foto"><img src="img/prod-quinoa.jpg" alt="Quinoa real boliviana"><div class="badges"><span class="badge badge--bolivia">Bolivia</span></div><button class="fav"><svg class="ico"><use href="#i-heart"></use></svg></button></div>
+        <div class="cuerpo"><div class="prov">Quinua Real</div><h4>Quinoa real boliviana</h4><div class="precio"><span class="now">Bs. 38</span></div><div class="sub"><svg class="ico"><use href="#i-leaf"></use></svg> Suscríbete −12%</div></div>
+      </div>
+      <div class="producto">
+        <div class="foto"><img src="img/prod-aceite-coco.png" alt="Aceite de coco virgen Coco Show"><div class="badges"><span class="badge badge--vegano">Vegano</span></div><button class="fav"><svg class="ico"><use href="#i-heart"></use></svg></button></div>
+        <div class="cuerpo"><div class="prov">Coco Show</div><h4>Aceite de coco virgen</h4><div class="precio"><span class="now">Bs. 72</span></div><div class="sub"><svg class="ico"><use href="#i-leaf"></use></svg> Suscríbete −12%</div></div>
+      </div>
+      <div class="producto">
+        <div class="foto"><img src="img/prod-miel.webp" alt="Miel de abeja pura"><div class="badges"><span class="badge badge--organico">Orgánico</span></div><button class="fav"><svg class="ico"><use href="#i-heart"></use></svg></button></div>
+        <div class="cuerpo"><div class="prov">Mama Toya</div><h4>Miel de abeja pura</h4><div class="precio"><span class="now">Bs. 58</span></div><div class="sub"><svg class="ico"><use href="#i-leaf"></use></svg> Suscríbete −12%</div></div>
+      </div>
+    </div>
+    <div class="prod-cta"><a data-toast="Disponible próximamente en la Web y en nuestra App Origen" class="btn btn--secondary btn--lg">Ver catálogo completo <svg class="ico"><use href="#i-arrow"></use></svg></a></div>
+  </div>
+</section>
+
+<!-- ===== Rewards ===== -->
+<section class="section green">
+  <div class="container">
+    <div class="rewards-block">
+      <div>
+        <span class="eyebrow on-dark">Rewards · Yapas · Referidos</span>
+        <h2 class="s-title">Aquí tú constancia, es premiada.</h2>
+        <p class="s-intro">Comer bien tiene que sentirse bien. Cada caja suma puntos, sube tu nivel y desbloquea beneficios reales. Y cuando invitas a alguien, ganan los dos.</p>
+        <div class="cta-row"><a href="#planes" class="btn btn--lima btn--lg">Empezar y sumar puntos</a></div>
+      </div>
+      <div class="reward-cards">
+        <div class="reward-pill">
+          <div class="ic"><svg class="ico"><use href="#i-spark"></use></svg></div>
+          <div><h4>Niveles que suben contigo</h4><p>Semilla → Luz → Agua → Tierra</p></div>
+          <span class="big">0-100</span>
+        </div>
+        <div class="reward-pill">
+          <div class="ic"><svg class="ico"><use href="#i-gift"></use></svg></div>
+          <div><h4>Yapas desbloqueables</h4><p>Envíos gratis, sorpresas y extras</p></div>
+          <span class="big">2x1</span>
+        </div>
+        <div class="reward-pill">
+          <div class="ic"><svg class="ico"><use href="#i-user"></use></svg></div>
+          <div><h4>Invita y ganan los dos</h4><p>Tú Bs. 30 en tu siguiente compra · tu amigo −20% en su primera compra</p></div>
+          <span class="big">+30</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Filosofía ===== -->
+<section class="section dark">
+  <div class="container filo">
+    <span class="eyebrow on-dark eyebrow--center">Volver al origen</span>
+    <p class="quote">La mayoría vende productos.<br>Origen vende <em>continuidad.</em></p>
+    <p class="s-intro center">No buscamos cerrar una compra. Buscamos ayudarte a construir una rutina que cuide tu salud y la de los que amas sin que tengas que pensarlo. Volver a lo simple, a lo natural, a entender qué entra en tu cuerpo.</p>
+    <div class="sign">Origen · La Paz, Bolivia</div>
+  </div>
+</section>
+
+<!-- ===== Testimonios ===== -->
+<section class="section">
+  <div class="container">
+    <div class="head-center">
+      <span class="eyebrow">Quienes ya viven Origen</span>
+      <h2 class="s-title center">No es una compra. <br>Es un estilo de vida más sano y feliz.</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi">
+        <div class="stars"><svg class="ico"><use href="#i-star"></use></svg><svg class="ico"><use href="#i-star"></use></svg><svg class="ico"><use href="#i-star"></use></svg><svg class="ico"><use href="#i-star"></use></svg><svg class="ico"><use href="#i-star"></use></svg></div>
+        <p>“Dejé de pensar en qué comprar. Llega cada quince días y ya. Es lo más cerca que he estado de comer bien sin esfuerzo.”</p>
+        <div class="who"><div class="av">AM</div><div><div class="nm">Andrea M.</div><div class="role">La Paz· 3 meses</div></div></div>
+      </div>
+      <div class="testi">
+        <div class="stars"><svg class="ico"><use href="#i-star"></use></svg><svg class="ico"><use href="#i-star"></use></svg><svg class="ico"><use href="#i-star"></use></svg><svg class="ico"><use href="#i-star"></use></svg><svg class="ico"><use href="#i-star"></use></svg></div>
+        <p>“Por fin sé de dónde viene lo que como. Saber el productor de cada cosa cambió por completo cómo confío en mi despensa.”</p>
+        <div class="who"><div class="av">JR</div><div><div class="nm">Javier R.</div><div class="role">La Paz· 2 meses</div></div></div>
+      </div>
+      <div class="testi">
+        <div class="stars"><svg class="ico"><use href="#i-star"></use></svg><svg class="ico"><use href="#i-star"></use></svg><svg class="ico"><use href="#i-star"></use></svg><svg class="ico"><use href="#i-star"></use></svg><svg class="ico"><use href="#i-star"></use></svg></div>
+        <p>“Los puntos y las Yapas me enganchan, no voy a mentir. Pero ya no quiero volver a ir al mercado.”</p>
+        <div class="who"><div class="av">CF</div><div><div class="nm">Camila F.</div><div class="role">El Alto· 3 meses</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Planes ===== -->
+<section class="section arena-bg" id="planes">
+  <div class="container">
+    <div class="head-center">
+      <span class="eyebrow">Empezar</span>
+      <h2 class="s-title center">Elige empezar hoy.</h2>
+      <p class="s-intro center">Sin permanencia. Cambias o cancelas desde la app cuando quieras.</p>
+    </div>
+    <div class="planes">
+      <div class="plan">
+        <span class="tag">Sin compromiso</span>
+        <div class="price"><span class="n">GRATIS</span><span class="u">/ mes</span></div>
+        <p class="desc">Compra suelta cuando la necesites.</p>
+        <ul>
+          <li><svg class="ico"><use href="#i-check"></use></svg> Catálogo completo</li>
+          <li><svg class="ico"><use href="#i-check"></use></svg> Entrega a domicilio</li>
+          <li><svg class="ico"><use href="#i-check"></use></svg> Acumula puntos</li>
+        </ul>
+        <a data-toast="Próximamente desde la App Origen" class="btn btn--secondary btn--block">Comprar suelto</a>
+      </div>
+      <div class="plan best">
+        <span class="badge-best">Recomendado</span>
+        <span class="tag">SUSCRIPCIÓN MENSUAL</span>
+        <div class="price"><span class="n">99 Bs</span><span class="u">cada mes</span></div>
+        <p class="desc">Descuento del 12% en cada Compra</p>
+        <ul>
+          <li>Descuento del 12% en cada Compra</li>
+          <li><svg class="ico"><use href="#i-check"></use></svg> Envío gratis </li>
+          <li><svg class="ico"><use href="#i-check"></use></svg> Recordatorios inteligentes</li>
+          <li><svg class="ico"><use href="#i-check"></use></svg> Puntos × 2 y Acceso a Yapas</li>
+        </ul>
+        <a href="https://wa.me/59170516511?text=Quiero%20pagar%20mi%20suscripcion%20de%2099%20Bs.%20por%20adelantado%20para%20tener%20un%2050%25%20de%20descuento%20en%20mi%20primera%20compra%20cuando%20la%20app%20de%20Origen%20este%20lista." target="_blank" rel="noopener" class="btn btn--lima btn--block">Armar mi caja</a>
+      </div>
+      <div class="plan">
+        <span class="tag tag--ink">Para regalar</span>
+        <div class="price"><span class="n">Envía una Caja</span></div>
+        <p class="desc">Una caja con una selección personalizada como regalo, directamente en la puerta de los que amas.</p>
+        <ul>
+          <li><svg class="ico"><use href="#i-check"></use></svg> Selección Personalizada</li>
+          <li><svg class="ico"><use href="#i-check"></use></svg> Empaque especial </li>
+          <li><svg class="ico"><use href="#i-check"></use></svg> Compra Suelta</li>
+        </ul>
+        <a data-toast="Próximamente desde la App Origen" class="btn btn--secondary btn--block">Regalar Origen</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="section" id="faq">
+  <div class="container">
+    <div class="head-center">
+      <span class="eyebrow">Preguntas frecuentes</span>
+      <h2 class="s-title center">Lo que sueles querer saber</h2>
+    </div>
+    <div class="faq">
+      <details open><summary>¿Tengo que comprometerme por mucho tiempo?<span class="pm"></span></summary><p>No. Origen no tiene mínimo de permanencia. Puedes pausar, ajustar o cancelar tu suscripción desde la app en cualquier momento, sin penalización ni objeciones.</p></details>
+      <details><summary>¿Dónde entregan?<span class="pm"></span></summary><p>Hoy entregamos en La Paz y El Alto. Estamos ampliando la cobertura nacional por etapas; al registrarte verás si ya llegamos a tu departamento.</p></details>
+      <details><summary>¿Cómo sé que los productos son realmente orgánicos?<span class="pm"></span></summary><p>Cada producto y productor pasa por un proceso de verificación. En la ficha de cada artículo ves el origen, el productor y su composición. En la App encontrarás una etiqueta distintiva en todos los productos que son 100% Organicos.Trabajamos solo con productos saludables. </p></details>
+      <details><summary>¿Puedo cambiar lo que viene en mi caja?<span class="pm"></span></summary><p>Sí. Tu caja es totalmente editable antes de cada entrega: Si son entregas programadas el mínimo para cambiar productos, cantidades o quitarlos es al momento de la confirmación de envio que es de 6 a 2 horas antes de la hora de entrega que es cuando recibes la notificación para pagar tu siguiente caja. Origen te dá acceso a tu seleccion de productos para que puedas ecitarla y también te sugiere reposiciones según tu ritmo de consumo. Sin esta confirmación de pago anticipado de productos, el envío se anula automaticamente.</p></details>
+      <details><summary>¿Qué son las Yapas y los puntos?<span class="pm"></span></summary><p>Cada compra suma puntos que elevan tu nivel (Semilla, Luz, Agua, Tierra). Al avanzar desbloqueas Yapas: beneficios adicionales como cupones de descuento en gimnasios, envíos gratis, 2x1 en productos sorpresa y descuentos exclusivos.</p></details>
+      <details><summary>¿Y el escáner de productos?<span class="pm"></span></summary><p>Es una función gratuita que llegará pronto: apuntas la cámara a cualquier producto y la IA de Origen interpretará su composición de forma simple y clara, entregandote un informe de las caracteristicas del producto escaneado. Funcionará para productos dentro y fuera del catálogo de Origen, queremos ayudarte a decidir mejor en cualquier lado.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA final ===== -->
+<section class="section green">
+  <div class="container cta-final">
+    <span class="eyebrow on-dark eyebrow--center">Tu primera caja</span>
+    <h2>Empieza a comer mejor <em>esta semana.</em></h2>
+    <div class="cta">
+      <a href="https://wa.me/59170516511?text=Quiero%20pagar%20mi%20suscripcion%20de%2099%20Bs.%20por%20adelantado%20para%20tener%20un%2050%25%20de%20descuento%20en%20mi%20primera%20compra%20cuando%20la%20app%20de%20Origen%20este%20lista." target="_blank" rel="noopener" class="btn btn--lima btn--lg">Armar mi primera caja</a>
+      <a href="https://api.whatsapp.com/send?phone=59170516511&amp;text=Hola%20soy%20productor%20de%20alimentos%20saludables%20y%20quiero%20subir%20mis%20productos%20a%20su%20App%20Origen%20%C2%BF%20C%C3%B3mo%20empiezo?" target="_blank" rel="noopener" class="btn btn--secondary btn--lg btn--on-dark">Soy Productor</a>
+    </div>
+    <p class="note">Sin permanencia · Cancela cuando quieras · Entrega en La Paz - El Alto</p>
+  </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="top">
+      <div>
+        <img src="img/logo-origen-light.svg" alt="Origen">
+        <p class="blurb">Suscripción inteligente de productos orgánicos y saludables. </p>
+      </div>
+      <div><h5>Producto</h5><ul><li><a href="#funciona">Cómo funciona</a></li><li><a href="#productos">Catálogo</a></li><li><a href="#planes">Planes</a></li><li><a data-toast="Próximamente desde la App Origen">Escáner</a></li></ul></div>
+      <div><h5>Origen</h5><ul><li><a href="#">Filosofía</a></li><li><a href="https://api.whatsapp.com/send?phone=59170516511&amp;text=Hola%20soy%20productor%20de%20alimentos%20saludables%20y%20quiero%20subir%20mis%20productos%20a%20su%20App%20Origen%20%C2%BF%20C%C3%B3mo%20empiezo?" target="_blank" rel="noopener">Productores</a></li><li><a href="https://api.whatsapp.com/send?phone=59170516511&amp;text=Hola%20soy%20rider%20quiero%20trabajar%20son%20ustedes%20%C2%BFC%C3%B3mo%20empiezo?" target="_blank" rel="noopener">Trabaja con nosotros</a></li></ul></div>
+      <div><h5>Ayuda</h5><ul><li><a href="#faq">Preguntas</a></li><li><a href="https://api.whatsapp.com/send?phone=59170516511&amp;text=Hola%20Origen%20App,%20Quiero%20saber%20m%C3%A1s" target="_blank" rel="noopener">Contacto</a></li><li><a data-toast="Por el momento entregamos en La Paz y El Alto, pronto llegaremos a toda Bolivia">Cobertura</a></li></ul></div>
+    </div>
+    <div class="bottom">
+      <span>© 2026 Origen App · La Paz, Bolivia</span>
+      <span>Hecho con amor desde el Origen.</span>
+    </div>
+  </div>
+</footer>
+
+</div><!-- /#site-root -->
+
+<!-- ===== Scripts (al final del body) ===== -->
+<script defer src="js/vendor/three.js"></script>
+<script defer src="js/intro.js"></script>
+<script defer src="js/toast.js"></script>
+<script defer src="js/screens.js"></script>
+<script defer src="js/reveal.js"></script>
+<script defer src="js/nav.js"></script>
+
+</body>
+</html>
